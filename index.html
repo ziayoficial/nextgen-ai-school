@@ -14,44 +14,21 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
-/* =========================================================
-   NextGen AI School — Design tokens
-   Concepto: "plano técnico" de un agente de IA.
-   ========================================================= */
 :root{
-  --ink-navy:      #0E2A47;
-  --ink-navy-2:    #123256;
-  --paper:         #F7F8FA;
-  --paper-line:    #E4E8EE;
-  --text-dark:     #101820;
-  --text-mute:     #55606B;
-  --circuit-blue:  #2F6FED;
-  --signal-teal:   #17B8A6;
-  --signal-amber:  #F2A93B;
-  --danger:        #D64545;
-  --ok:            #2E9E6B;
-
-  --font-display: "Space Grotesk", "IBM Plex Sans", sans-serif;
-  --font-body:    "IBM Plex Sans", sans-serif;
-  --font-mono:    "IBM Plex Mono", monospace;
-
-  --radius: 6px;
-  --max: 1120px;
+  --ink-navy:#0E2A47; --ink-navy-2:#123256; --paper:#F7F8FA; --paper-line:#E4E8EE;
+  --text-dark:#101820; --text-mute:#55606B; --circuit-blue:#2F6FED; --signal-teal:#17B8A6;
+  --signal-amber:#F2A93B; --danger:#D64545; --ok:#2E9E6B;
+  --font-display:"Space Grotesk","IBM Plex Sans",sans-serif;
+  --font-body:"IBM Plex Sans",sans-serif;
+  --font-mono:"IBM Plex Mono",monospace;
+  --radius:6px; --max:1120px;
 }
-
 *,*::before,*::after{ box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
-body{
-  margin:0;
-  font-family:var(--font-body);
-  color:var(--text-dark);
-  background:var(--paper);
-  line-height:1.55;
-  -webkit-font-smoothing:antialiased;
-}
+body{ margin:0; font-family:var(--font-body); color:var(--text-dark); background:var(--paper); line-height:1.55; -webkit-font-smoothing:antialiased; }
 h1,h2,h3{ font-family:var(--font-display); line-height:1.15; margin:0 0 .5em; letter-spacing:-0.01em; }
-h1{ font-size:clamp(2rem, 4vw, 3.1rem); font-weight:600; }
-h2{ font-size:clamp(1.5rem, 3vw, 2.2rem); font-weight:600; }
+h1{ font-size:clamp(2rem,4vw,3.1rem); font-weight:600; }
+h2{ font-size:clamp(1.5rem,3vw,2.2rem); font-weight:600; }
 h3{ font-size:1.15rem; font-weight:600; }
 p{ margin:0 0 1em; color:var(--text-mute); }
 a{ color:inherit; }
@@ -59,57 +36,33 @@ a{ color:inherit; }
 .section{ padding:88px 0; }
 .center{ text-align:center; }
 .section-sub{ max-width:600px; margin:0 auto 40px; }
-
 ::selection{ background:var(--signal-amber); color:var(--ink-navy); }
 :focus-visible{ outline:2px solid var(--circuit-blue); outline-offset:2px; }
-@media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
+@media (prefers-reduced-motion:reduce){ *{ animation:none !important; transition:none !important; } }
 
-/* ---------- Buttons ---------- */
-.btn{
-  display:inline-flex; align-items:center; justify-content:center;
-  padding:14px 26px; border-radius:var(--radius);
-  font-family:var(--font-display); font-weight:600; font-size:.98rem;
-  text-decoration:none; border:1.5px solid transparent; cursor:pointer;
-  transition:transform .12s ease, background-color .12s ease, color .12s ease;
-}
+/* Buttons */
+.btn{ display:inline-flex; align-items:center; justify-content:center; padding:14px 26px; border-radius:var(--radius);
+  font-family:var(--font-display); font-weight:600; font-size:.98rem; text-decoration:none; border:1.5px solid transparent; cursor:pointer;
+  transition:transform .12s ease, background-color .12s ease, color .12s ease, border-color .12s ease; }
 .btn:hover{ transform:translateY(-1px); }
-.btn:disabled{ opacity:.55; cursor:not-allowed; transform:none; }
 .btn-primary{ background:var(--signal-amber); color:var(--ink-navy); }
 .btn-primary:hover{ background:#f5b752; }
 .btn-ghost{ background:transparent; border-color:var(--paper-line); color:var(--ink-navy); }
 .btn-ghost:hover{ border-color:var(--circuit-blue); }
-.btn-teal{ background:var(--signal-teal); color:#04241F; }
-.btn-teal:hover{ background:#22cbb7; }
 .btn-small{ padding:9px 18px; font-size:.85rem; }
-.btn-large{ padding:16px 32px; font-size:1.05rem; width:100%; }
+.btn-large{ padding:15px 28px; font-size:1.02rem; width:100%; }
+.eyebrow-plain{ font-family:var(--font-mono); font-size:.78rem; color:var(--circuit-blue); margin-bottom:12px; }
 
-.eyebrow-plain{
-  font-family:var(--font-mono); font-size:.78rem; color:var(--circuit-blue);
-  margin-bottom:12px;
-}
-
-/* ---------- Cohort bar ---------- */
-.cohort-bar{
-  background:var(--signal-amber); color:var(--ink-navy);
-  font-family:var(--font-mono); font-size:.82rem;
-}
+/* Cohort bar */
+.cohort-bar{ background:var(--signal-amber); color:var(--ink-navy); font-family:var(--font-mono); font-size:.82rem; }
 .cohort-bar p{ padding:8px 24px; color:var(--ink-navy); text-align:center; margin:0; }
 .cohort-bar strong{ font-weight:700; }
 
-/* ---------- Lang toggle ---------- */
+/* Header */
 .lang-toggle{ display:flex; gap:2px; border:1px solid var(--paper-line); border-radius:var(--radius); overflow:hidden; }
-.lang-toggle button{
-  border:0; background:#fff; color:var(--text-mute); font-family:var(--font-mono);
-  font-size:.72rem; font-weight:500; padding:6px 10px; cursor:pointer;
-}
+.lang-toggle button{ border:0; background:#fff; color:var(--text-mute); font-family:var(--font-mono); font-size:.72rem; font-weight:500; padding:6px 10px; cursor:pointer; }
 .lang-toggle button.active{ background:var(--ink-navy); color:#fff; }
-
-/* ---------- Header ---------- */
-.site-header{
-  position:sticky; top:0; z-index:20;
-  background:rgba(247,248,250,.92); backdrop-filter:blur(6px);
-  border-bottom:1px solid var(--paper-line);
-}
+.site-header{ position:sticky; top:0; z-index:20; background:rgba(247,248,250,.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--paper-line); }
 .header-inner{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 24px; flex-wrap:wrap; }
 .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink-navy); }
 .brand-mark{ width:30px; height:30px; }
@@ -122,104 +75,79 @@ a{ color:inherit; }
 .header-actions{ display:flex; align-items:center; gap:14px; }
 @media (max-width:820px){ .main-nav{ display:none; } }
 
-/* ---------- Hero ---------- */
-.hero{
-  position:relative; overflow:hidden;
-  background:var(--ink-navy); color:#EAF2FF; padding:96px 0 64px;
-}
-.hero-grid{
-  position:absolute; inset:0;
-  background-image:
-    linear-gradient(rgba(95,168,255,.12) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(95,168,255,.12) 1px, transparent 1px);
-  background-size:40px 40px;
-  mask-image:linear-gradient(to bottom, black, transparent 92%);
-}
-.hero-inner{
-  position:relative; display:grid; grid-template-columns:1.1fr 1fr;
-  gap:48px; align-items:center;
-}
+/* Hero */
+.hero{ position:relative; overflow:hidden; background:var(--ink-navy); color:#EAF2FF; padding:96px 0 72px; }
+.hero-grid{ position:absolute; inset:0;
+  background-image:linear-gradient(rgba(95,168,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(95,168,255,.12) 1px,transparent 1px);
+  background-size:40px 40px; mask-image:linear-gradient(to bottom,black,transparent 92%); }
+.hero-inner{ position:relative; display:grid; grid-template-columns:1.1fr 1fr; gap:48px; align-items:center; }
 @media (max-width:900px){ .hero-inner{ grid-template-columns:1fr; } }
 .hero h1{ color:#fff; }
-.hero-sub{ color:#B9CBE8; max-width:46ch; }
-.hero-cta{ display:flex; gap:14px; margin:28px 0 22px; flex-wrap:wrap; }
+.hero-sub{ color:#B9CBE8; max-width:46ch; font-size:1.05rem; }
+.hero-cta{ display:flex; gap:14px; margin:28px 0 14px; flex-wrap:wrap; }
 .hero .btn-ghost{ border-color:#2C4A6E; color:#EAF2FF; }
 .hero .btn-ghost:hover{ border-color:var(--signal-teal); }
-.hero-slogan{ font-family:var(--font-mono); color:var(--signal-teal); font-size:.88rem; letter-spacing:.02em; }
+.hero-from{ font-family:var(--font-mono); font-size:.8rem; color:#9DBBEA; margin:0 0 18px; }
+.hero-slogan{ font-family:var(--font-mono); color:var(--signal-teal); font-size:.88rem; letter-spacing:.02em; margin:0; }
 .hero-diagram svg{ width:100%; height:auto; }
 
-/* ---------- Proof strip ---------- */
+/* Facts strip */
 .proof{ background:var(--ink-navy-2); border-top:1px solid #1D426B; }
-.proof-inner{ display:flex; flex-wrap:wrap; gap:36px; justify-content:space-between; padding:28px 24px; }
+.proof-inner{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; padding:26px 24px; }
+@media (max-width:640px){ .proof-inner{ grid-template-columns:repeat(2,1fr); } }
 .proof-stat{ display:flex; flex-direction:column; color:#B9CBE8; font-size:.85rem; }
-.proof-stat .num{ font-family:var(--font-display); font-size:1.7rem; font-weight:700; color:#fff; }
+.proof-stat .num{ font-family:var(--font-display); font-size:1.6rem; font-weight:700; color:#fff; }
 
-/* ---------- Why now ---------- */
+/* Why */
 .why-grid{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; }
 @media (max-width:820px){ .why-grid{ grid-template-columns:1fr; } }
 .why-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:18px; }
 .why-list li{ display:flex; gap:14px; align-items:flex-start; color:var(--text-dark); }
-.tick{
-  font-family:var(--font-mono); font-size:.72rem; color:var(--circuit-blue);
-  border:1px solid var(--paper-line); border-radius:4px; padding:3px 6px; flex:none;
-}
+.tick{ font-family:var(--font-mono); font-size:.72rem; color:var(--circuit-blue); border:1px solid var(--paper-line); border-radius:4px; padding:3px 6px; flex:none; }
 
-/* ---------- Courses ---------- */
+/* Courses */
 .courses{ background:var(--paper); }
-.courses-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:32px; align-items:stretch; }
+.courses-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:40px; align-items:stretch; }
 @media (max-width:900px){ .courses-grid{ grid-template-columns:1fr; max-width:480px; margin-left:auto; margin-right:auto; } }
-.course-card{
-  position:relative; display:flex; flex-direction:column;
-  background:#fff; border:1.4px solid var(--paper-line); border-radius:10px; padding:26px 24px;
-}
-.course-card.popular{ border-color:var(--signal-amber); box-shadow:0 10px 30px rgba(14,42,71,.10); }
-.course-badge{
-  position:absolute; top:-12px; left:50%; transform:translateX(-50%);
-  font-family:var(--font-mono); font-size:.68rem; letter-spacing:.05em; text-transform:uppercase;
-  background:var(--signal-amber); color:var(--ink-navy); border-radius:20px; padding:4px 14px; white-space:nowrap;
-}
-.course-name{ font-family:var(--font-mono); font-size:.74rem; color:var(--circuit-blue); text-transform:uppercase; letter-spacing:.06em; }
-.course-card h3{ font-size:1.3rem; margin-top:8px; }
-.course-tagline{ font-size:.94rem; }
-.course-audience{ font-size:.85rem; color:var(--text-mute); border-left:3px solid var(--signal-teal); padding-left:10px; margin:14px 0; }
-.course-feats{ list-style:none; margin:0 0 20px; padding:0; display:flex; flex-direction:column; gap:9px; font-size:.9rem; color:var(--text-dark); }
+.course-card{ position:relative; display:flex; flex-direction:column; background:#fff; border:1.4px solid var(--paper-line); border-radius:10px; padding:28px 24px 24px; }
+.course-card.popular{ border:2px solid var(--signal-amber); box-shadow:0 14px 36px rgba(14,42,71,.14); }
+@media (min-width:901px){ .course-card.popular{ transform:translateY(-10px); } }
+.course-badge{ position:absolute; top:-13px; left:50%; transform:translateX(-50%); font-family:var(--font-mono); font-size:.68rem; letter-spacing:.05em;
+  text-transform:uppercase; background:var(--signal-amber); color:var(--ink-navy); border-radius:20px; padding:4px 14px; white-space:nowrap; }
+.course-level{ font-family:var(--font-mono); font-size:.72rem; color:var(--circuit-blue); text-transform:uppercase; letter-spacing:.06em; margin:0 0 6px; }
+.course-card h3{ font-size:1.3rem; margin:0 0 8px; }
+.course-tagline{ font-size:.92rem; margin:0 0 14px; }
+.course-price{ margin:0 0 16px; padding:14px 0; border-top:1px solid var(--paper-line); border-bottom:1px solid var(--paper-line); }
+.course-price .amount{ font-family:var(--font-display); font-size:2.5rem; font-weight:700; color:var(--ink-navy); line-height:1; }
+.course-price .amount .cur{ font-size:.9rem; color:var(--signal-teal); vertical-align:top; margin-right:4px; }
+.course-price .per{ display:block; font-size:.78rem; color:var(--text-mute); margin-top:6px; }
+.course-audience{ font-size:.85rem; color:var(--text-mute); border-left:3px solid var(--signal-teal); padding-left:10px; margin:0 0 16px; }
+.course-feats{ list-style:none; margin:0 0 22px; padding:0; display:flex; flex-direction:column; gap:9px; font-size:.9rem; color:var(--text-dark); }
 .course-feats li{ display:flex; gap:9px; }
 .course-feats li::before{ content:"✓"; color:var(--ok); font-weight:700; flex:none; }
-.course-price{ margin-top:auto; border-top:1px solid var(--paper-line); padding-top:18px; }
-.course-price .amount{ font-family:var(--font-display); font-size:2.1rem; font-weight:700; color:var(--ink-navy); }
-.course-price .amount .cur{ font-size:.9rem; color:var(--signal-teal); vertical-align:top; margin-right:3px; }
-.course-price .was{ font-size:.88rem; color:var(--text-mute); text-decoration:line-through; margin-left:8px; }
-.course-price .per{ font-size:.78rem; color:var(--text-mute); }
-.course-card .btn{ margin-top:14px; }
+.course-card .btn{ margin-top:auto; }
+.course-card .btn-ghost{ border-color:var(--ink-navy); }
+.course-card .btn-ghost:hover{ background:var(--ink-navy); color:#fff; }
 
-/* ---------- Method ---------- */
+/* Method */
 .metodo{ background:#fff; border-top:1px solid var(--paper-line); border-bottom:1px solid var(--paper-line); }
 .metodo-grid{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; }
 @media (max-width:820px){ .metodo-grid{ grid-template-columns:1fr; } }
 .method-steps{ margin:0; padding-left:20px; display:flex; flex-direction:column; gap:14px; color:var(--text-dark); }
 .method-steps strong{ color:var(--ink-navy); }
 
-/* ---------- Instructor ---------- */
+/* Instructor */
 .instructor{ background:var(--paper); }
-.instructor-grid{ display:grid; grid-template-columns:220px 1fr; gap:40px; align-items:center; }
-@media (max-width:700px){ .instructor-grid{ grid-template-columns:1fr; } }
-.instructor-photo{
-  width:100%; aspect-ratio:1; border-radius:8px;
-  background:linear-gradient(135deg, var(--ink-navy), var(--circuit-blue));
-}
+.instructor-box{ max-width:760px; border-left:4px solid var(--signal-teal); padding-left:28px; }
 
-/* ---------- Testimonios ---------- */
+/* Testimonials (se ocultan si no hay testimonios reales) */
 .testimonios{ background:#fff; border-top:1px solid var(--paper-line); border-bottom:1px solid var(--paper-line); }
 .testi-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:28px; }
 @media (max-width:820px){ .testi-grid{ grid-template-columns:1fr; } }
-blockquote{
-  margin:0; padding:20px; border:1px solid var(--paper-line); border-radius:6px;
-  background:var(--paper); font-size:.95rem; color:var(--text-dark);
-}
+blockquote{ margin:0; padding:20px; border:1px solid var(--paper-line); border-radius:6px; background:var(--paper); font-size:.95rem; color:var(--text-dark); }
 blockquote cite{ display:block; margin-top:12px; font-style:normal; color:var(--text-mute); font-size:.82rem; }
-.testi-note{ text-align:center; font-size:.78rem; margin-top:18px; }
 
-/* ---------- Bonos ---------- */
+/* Bonuses */
 .bonos{ background:var(--paper); }
 .bonos-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:32px; }
 @media (max-width:820px){ .bonos-grid{ grid-template-columns:1fr; } }
@@ -227,44 +155,32 @@ blockquote cite{ display:block; margin-top:12px; font-style:normal; color:var(--
 .bono h3{ font-size:1.02rem; color:var(--ink-navy); }
 .bono p{ margin:0; font-size:.92rem; }
 
-/* ---------- Inversión ---------- */
+/* Final CTA */
 .inversion{ background:var(--ink-navy); color:#EAF2FF; }
 .inversion .eyebrow-plain{ color:var(--signal-teal); }
 .inversion h2{ color:#fff; }
 .inversion-inner{ display:flex; flex-direction:column; align-items:center; }
 .inversion-note{ max-width:560px; text-align:center; color:#B9CBE8; margin-bottom:26px; }
-.trust-row{
-  list-style:none; display:flex; flex-wrap:wrap; justify-content:center; gap:10px 18px;
-  margin:0; padding:14px 0 0; border-top:1px solid #234E7C;
-  font-family:var(--font-mono); font-size:.74rem; color:#9DBBEA;
-}
-.trust-row.plain{ border-top:none; padding:0; margin-top:16px; }
-.secure-note{ font-size:.8rem; color:#7F9CC1; margin-top:18px; text-align:center; }
+.trust-row{ list-style:none; display:flex; flex-wrap:wrap; justify-content:center; gap:10px 18px; margin:26px 0 0; padding:14px 0 0; border-top:1px solid #234E7C;
+  font-family:var(--font-mono); font-size:.74rem; color:#9DBBEA; }
+.secure-note{ font-size:.8rem; color:#7F9CC1; margin-top:16px; text-align:center; }
 
-/* ---------- Mobile sticky CTA ---------- */
-.mobile-cta{
-  display:none; position:sticky; bottom:0; z-index:15;
-  background:var(--ink-navy); border-top:1px solid #234E7C;
-  padding:12px 20px; align-items:center; justify-content:space-between; gap:12px;
-}
+/* Mobile CTA */
+.mobile-cta{ display:none; position:sticky; bottom:0; z-index:15; background:var(--ink-navy); border-top:1px solid #234E7C; padding:12px 20px; align-items:center; justify-content:space-between; gap:12px; }
 .mobile-cta span{ font-family:var(--font-mono); font-size:.82rem; color:#EAF2FF; }
 @media (max-width:640px){ .mobile-cta{ display:flex; } }
 
-/* ---------- FAQ / garantía ---------- */
+/* FAQ */
 .faq{ background:#fff; border-top:1px solid var(--paper-line); }
 .faq-grid{ display:grid; grid-template-columns:1fr 1.4fr; gap:48px; }
 @media (max-width:820px){ .faq-grid{ grid-template-columns:1fr; } }
-.guarantee{
-  border:1.4px solid var(--signal-teal); border-radius:8px; padding:24px; height:fit-content;
-}
+.guarantee{ border:1.4px solid var(--signal-teal); border-radius:8px; padding:24px; height:fit-content; }
 .guarantee h3{ color:var(--ink-navy); }
-.faq-list details{
-  border-bottom:1px solid var(--paper-line); padding:16px 0; cursor:pointer;
-}
+.faq-list details{ border-bottom:1px solid var(--paper-line); padding:16px 0; cursor:pointer; }
 .faq-list summary{ font-family:var(--font-display); font-weight:600; color:var(--ink-navy); }
 .faq-list p{ margin:10px 0 0; }
 
-/* ---------- Footer ---------- */
+/* Footer */
 .site-footer{ background:var(--ink-navy); color:#8FA9C9; padding:36px 0; }
 .footer-inner{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
 .footer-inner .brand-word{ color:#fff; }
@@ -272,61 +188,42 @@ blockquote cite{ display:block; margin-top:12px; font-style:normal; color:var(--
 .footer-legal{ font-size:.8rem; margin:0; }
 .footer-disclaimer{ width:100%; font-size:.72rem; color:#6E87A6; margin:18px 0 0; border-top:1px solid #1D426B; padding-top:14px; }
 
-/* ---------- Modal ---------- */
-.modal-backdrop{
-  position:fixed; inset:0; z-index:60; display:none;
-  align-items:center; justify-content:center; padding:20px;
-  background:rgba(8,20,34,.72); backdrop-filter:blur(4px);
-}
+/* Modal */
+.modal-backdrop{ position:fixed; inset:0; z-index:60; display:none; align-items:center; justify-content:center; padding:20px; background:rgba(8,20,34,.72); backdrop-filter:blur(4px); }
 .modal-backdrop.open{ display:flex; }
-.modal{
-  width:100%; max-width:440px; max-height:92vh; overflow-y:auto;
-  background:#fff; border-radius:12px; padding:30px 26px;
-}
+.modal{ width:100%; max-width:440px; max-height:92vh; overflow-y:auto; background:#fff; border-radius:12px; padding:30px 26px; }
 .modal h3{ margin-top:4px; }
-.modal-close{
-  float:right; border:1px solid var(--paper-line); background:#fff; color:var(--text-mute);
-  border-radius:6px; font-size:1rem; width:32px; height:32px; cursor:pointer;
-}
+.modal-close{ float:right; border:1px solid var(--paper-line); background:#fff; color:var(--text-mute); border-radius:6px; font-size:1rem; width:32px; height:32px; cursor:pointer; }
+.modal-price{ margin:4px 0 14px; }
+.modal-sub{ font-size:.9rem; color:var(--text-mute); }
 .gw-list{ display:flex; flex-direction:column; gap:12px; margin:18px 0 12px; }
-.gw-btn{
-  display:flex; align-items:center; justify-content:space-between; gap:12px;
-  width:100%; text-align:left; padding:16px 18px; border:1.4px solid var(--paper-line);
-  border-radius:8px; background:var(--paper); cursor:pointer; text-decoration:none; color:var(--text-dark);
-}
+.gw-btn{ display:flex; align-items:center; justify-content:space-between; gap:12px; width:100%; text-align:left; padding:16px 18px; border:1.4px solid var(--paper-line);
+  border-radius:8px; background:var(--paper); cursor:pointer; text-decoration:none; color:var(--text-dark); }
 .gw-btn:hover{ border-color:var(--circuit-blue); }
 .gw-btn strong{ font-family:var(--font-display); font-size:1rem; display:block; }
 .gw-btn small{ color:var(--text-mute); font-size:.78rem; }
 .gw-btn .pay-arrow{ color:var(--circuit-blue); font-weight:700; }
-.gw-warn{
-  font-size:.8rem; color:var(--danger); border:1px solid rgba(214,69,69,.4); background:rgba(214,69,69,.06);
-  border-radius:6px; padding:10px 12px; margin:10px 0;
-}
-.gw-none{
-  font-size:.9rem; border:1px solid var(--paper-line); border-radius:6px; padding:16px; text-align:center;
-}
+.gw-none{ font-size:.9rem; border:1px solid var(--paper-line); border-radius:6px; padding:16px; text-align:center; }
 .modal-secure{ font-size:.78rem; color:var(--text-mute); text-align:center; margin:14px 0 0; }
 
-/* ---------- Admin ---------- */
-.admin-view{ display:none; padding:40px 0 80px; }
+/* Admin */
+.admin-view{ display:none; padding:40px 24px 80px; }
 .admin-view.open{ display:block; }
 .admin-panel{ max-width:760px; margin:0 auto; background:#fff; border:1.4px solid var(--paper-line); border-radius:10px; padding:26px; }
 .admin-panel h2{ margin-top:0; }
 .admin-panel label{ display:block; font-family:var(--font-mono); font-size:.74rem; color:var(--text-mute); margin:12px 0 4px; }
 .admin-panel input[type=text],.admin-panel input[type=number],.admin-panel input[type=password],.admin-panel textarea{
-  width:100%; padding:9px 11px; border:1px solid var(--paper-line); border-radius:6px; font-size:.92rem; font-family:var(--font-body); color:var(--text-dark);
-}
+  width:100%; padding:9px 11px; border:1px solid var(--paper-line); border-radius:6px; font-size:.92rem; font-family:var(--font-body); color:var(--text-dark); }
 .admin-panel textarea{ font-family:var(--font-mono); font-size:.78rem; }
 .gw-row{ border:1px solid var(--paper-line); border-radius:8px; padding:14px; margin:14px 0; }
 .gw-row .row-head{ display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; }
 .gw-row .row-head strong{ font-family:var(--font-display); }
 .gw-row .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
 .gw-row .grid3{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; }
-.gw-bar{ height:8px; border-radius:4px; background:var(--paper-line); overflow:hidden; margin-top:8px; }
+.gw-bar{ height:8px; border-radius:4px; background:var(--paper-line); overflow:hidden; margin-top:10px; }
 .gw-bar i{ display:block; height:100%; background:var(--signal-teal); }
 .gw-bar i.hot{ background:var(--danger); }
 .admin-actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top:22px; }
-.admin-login{ max-width:400px; margin:0 auto; }
 .admin-msg{ font-size:.8rem; margin:10px 0 0; }
 .admin-msg.ok{ color:var(--ok); }
 .admin-msg.err{ color:var(--danger); }
@@ -335,7 +232,6 @@ blockquote cite{ display:block; margin-top:12px; font-style:normal; color:var(--
 </head>
 <body>
 
-<!-- Barra de cohorte activa (configurable desde el panel admin) -->
 <div class="cohort-bar"><p id="cohort-text"></p></div>
 
 <header class="site-header">
@@ -353,7 +249,6 @@ blockquote cite{ display:block; margin-top:12px; font-style:normal; color:var(--
       <a href="#courses" data-i18n="nav.courses">Courses</a>
       <a href="#method" data-i18n="nav.method">Method</a>
       <a href="#faq" data-i18n="nav.faq">FAQ</a>
-      <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
     </nav>
     <div class="header-actions">
       <div class="lang-toggle" aria-label="Language">
@@ -367,18 +262,18 @@ blockquote cite{ display:block; margin-top:12px; font-style:normal; color:var(--
 
 <main id="top">
 
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-grid" aria-hidden="true"></div>
     <div class="wrap hero-inner">
       <div class="hero-copy">
-        <p class="eyebrow-plain" data-i18n="hero.eyebrow">Live cohort · Limited seats</p>
+        <p class="eyebrow-plain" data-i18n="hero.eyebrow">Live online cohorts · English &amp; Spanish</p>
         <h1 data-i18n="hero.title">Learn to build AI agents that work for you — not just to use a chatbot.</h1>
-        <p class="hero-sub" data-i18n="hero.sub">NextGen AI School takes you from zero to shipping your own autonomous AI agents: systems that research, decide, and execute real work, connected to the tools you already use.</p>
+        <p class="hero-sub" data-i18n="hero.sub">NextGen AI School takes you from zero to shipping your own autonomous AI agents.</p>
         <div class="hero-cta">
-          <a href="#courses" class="btn btn-primary" data-i18n="hero.cta1">I want to enroll</a>
-          <a href="#courses" class="btn btn-ghost" data-i18n="hero.cta2">See the courses</a>
+          <a href="#courses" class="btn btn-primary" data-i18n="hero.cta1">See programs &amp; prices</a>
+          <a href="#method" class="btn btn-ghost" data-i18n="hero.cta2">How it works</a>
         </div>
+        <p class="hero-from" id="hero-from"></p>
         <p class="hero-slogan" data-i18n="hero.slogan">Learn. Build. Transform.</p>
       </div>
 
@@ -423,22 +318,20 @@ blockquote cite{ display:block; margin-top:12px; font-style:normal; color:var(--
     </div>
   </section>
 
-  <!-- PRUEBA SOCIAL -->
   <section class="proof">
     <div class="wrap proof-inner">
-      <div class="proof-stat"><span class="num">1,240+</span><span data-i18n="proof.students">students trained</span></div>
-      <div class="proof-stat"><span class="num">37</span><span data-i18n="proof.countries">countries in the community</span></div>
-      <div class="proof-stat"><span class="num">92%</span><span data-i18n="proof.completion">program completion rate</span></div>
-      <div class="proof-stat"><span class="num">4.8/5</span><span data-i18n="proof.rating">average rating</span></div>
+      <div class="proof-stat"><span class="num">6</span><span data-i18n="proof.s1">live modules per program</span></div>
+      <div class="proof-stat"><span class="num">4–6 h</span><span data-i18n="proof.s2">per week, live + hands-on</span></div>
+      <div class="proof-stat"><span class="num">EN · ES</span><span data-i18n="proof.s3">live cohorts in both languages</span></div>
+      <div class="proof-stat"><span class="num">7</span><span data-i18n="proof.s4">day money-back guarantee</span></div>
     </div>
   </section>
 
-  <!-- POR QUÉ AHORA -->
   <section class="section why">
     <div class="wrap why-grid">
       <div class="why-text">
         <h2 data-i18n="why.title">The market no longer rewards people who "know how to use AI".</h2>
-        <p data-i18n="why.body">It rewards people who can build with it. The most in-demand AI training in 2026 isn't basic chatbot usage — it's designing agents that automate entire workflows: support, sales, research, operations. That's exactly what you'll master here.</p>
+        <p data-i18n="why.body">It rewards people who can build with it.</p>
       </div>
       <ul class="why-list">
         <li><span class="tick">01</span><span data-i18n="why.item1">Design agents with memory, tools, and their own goals.</span></li>
@@ -449,69 +342,62 @@ blockquote cite{ display:block; margin-top:12px; font-style:normal; color:var(--
     </div>
   </section>
 
-  <!-- CURSOS (renderizados por JS desde la config) -->
   <section class="section courses" id="courses">
     <div class="wrap">
       <p class="eyebrow-plain center" data-i18n="courses.eyebrow">The programs</p>
       <h2 class="center" data-i18n="courses.title">Three paths. One skill: building with AI.</h2>
-      <p class="section-sub center" data-i18n="courses.sub">Choose the program that fits where you are today. Every course is live, hands-on, and taught by people who ship AI in production.</p>
+      <p class="section-sub center" data-i18n="courses.sub">Choose the program that fits where you are today.</p>
       <div class="courses-grid" id="courses-grid"></div>
     </div>
   </section>
 
-  <!-- MÉTODO -->
   <section class="section metodo" id="method">
     <div class="wrap metodo-grid">
       <div>
         <p class="eyebrow-plain" data-i18n="method.eyebrow">How it works</p>
         <h2 data-i18n="method.title">Less slides, more working sessions.</h2>
-        <p data-i18n="method.body">Weekly live sessions, hands-on challenges between classes, and a staff review of your agent before you move to the next module.</p>
+        <p data-i18n="method.body">Weekly live sessions and hands-on challenges.</p>
       </div>
       <ol class="method-steps">
-        <li><strong data-i18n="method.s1t">Design</strong> <span data-i18n="method.s1d">— you define the goal and flow of your agent on a guided blueprint.</span></li>
-        <li><strong data-i18n="method.s2t">Build</strong> <span data-i18n="method.s2d">— you implement it step by step with live support.</span></li>
-        <li><strong data-i18n="method.s3t">Test</strong> <span data-i18n="method.s3d">— you push it against real cases before publishing.</span></li>
-        <li><strong data-i18n="method.s4t">Launch</strong> <span data-i18n="method.s4d">— you ship it as part of your final portfolio.</span></li>
+        <li><strong data-i18n="method.s1t">Design</strong> <span data-i18n="method.s1d">— you define the goal and flow of your agent.</span></li>
+        <li><strong data-i18n="method.s2t">Build</strong> <span data-i18n="method.s2d">— you implement it step by step.</span></li>
+        <li><strong data-i18n="method.s3t">Test</strong> <span data-i18n="method.s3d">— you push it against real cases.</span></li>
+        <li><strong data-i18n="method.s4t">Launch</strong> <span data-i18n="method.s4d">— you ship it as part of your portfolio.</span></li>
       </ol>
     </div>
   </section>
 
-  <!-- INSTRUCTOR -->
   <section class="section instructor">
-    <div class="wrap instructor-grid">
-      <div class="instructor-photo" aria-hidden="true"></div>
-      <div>
+    <div class="wrap">
+      <div class="instructor-box">
         <p class="eyebrow-plain" data-i18n="instructor.eyebrow">Who teaches</p>
         <h2 data-i18n="instructor.title">A team that builds AI agents in production — not just in slides.</h2>
-        <p data-i18n="instructor.body">NextGen's teaching team comes from real AI automation and integration projects in digital businesses — not recycled generic courses. You'll learn from real cases, including the mistakes.</p>
+        <p data-i18n="instructor.body">Our teaching team comes from real AI automation projects.</p>
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIOS (renderizados por JS) -->
-  <section class="section testimonios">
+  <section class="section testimonios" id="testimonials" hidden>
     <div class="wrap">
       <p class="eyebrow-plain center" data-i18n="testimonials.eyebrow">What students say</p>
       <div class="testi-grid" id="testi-grid"></div>
-      <p class="testi-note" data-i18n="testimonials.note">* Illustrative testimonials from the pilot phase — replace with real quotes before launch.</p>
     </div>
   </section>
 
-  <!-- BONOS -->
   <section class="section bonos">
     <div class="wrap">
-      <p class="eyebrow-plain center" data-i18n="bonuses.eyebrow">Enroll today and get</p>
+      <p class="eyebrow-plain center" data-i18n="bonuses.eyebrow">Included when you enroll</p>
       <h2 class="center" data-i18n="bonuses.title">Three extra pieces for your blueprint</h2>
       <div class="bonos-grid" id="bonos-grid"></div>
     </div>
   </section>
 
-  <!-- INVERSIÓN / PAGO -->
   <section class="section inversion" id="pricing">
     <div class="wrap inversion-inner">
-      <p class="eyebrow-plain center" data-i18n="pay.eyebrow">Investment</p>
-      <h2 class="center" data-i18n="pay.title">One payment. Full access.</h2>
-      <p class="inversion-note" data-i18n="pay.note">Secure card payment in USD, processed by our payment gateway. Choose your course above and pick your payment method at checkout.</p>
+      <p class="eyebrow-plain center" data-i18n="pay.eyebrow">Next step</p>
+      <h2 class="center" data-i18n="pay.title">Ready to build your first agent?</h2>
+      <p class="inversion-note" data-i18n="pay.note">Choose a program and pay securely by card.</p>
+      <a href="#courses" class="btn btn-primary" data-i18n="pay.cta">Choose your program</a>
       <ul class="trust-row" aria-label="Accepted payment methods">
         <li>Visa</li>
         <li>Mastercard</li>
@@ -522,12 +408,11 @@ blockquote cite{ display:block; margin-top:12px; font-style:normal; color:var(--
     </div>
   </section>
 
-  <!-- GARANTÍA + FAQ -->
   <section class="section faq" id="faq">
     <div class="wrap faq-grid">
       <div class="guarantee">
         <h3 data-i18n="guarantee.title">7-day money-back guarantee</h3>
-        <p data-i18n="guarantee.body">Try the first week risk-free. If the program isn't for you, we refund 100% of your payment. No awkward questions.</p>
+        <p data-i18n="guarantee.body">Try the first week risk-free.</p>
       </div>
       <div class="faq-list" id="faq-list"></div>
     </div>
@@ -535,10 +420,9 @@ blockquote cite{ display:block; margin-top:12px; font-style:normal; color:var(--
 
 </main>
 
-<!-- CTA fija para móvil -->
 <div class="mobile-cta">
-  <span id="mobile-price">USD 497</span>
-  <a href="#courses" class="btn btn-primary btn-small" data-i18n="mobile.cta">Enroll</a>
+  <span id="mobile-price"></span>
+  <a href="#courses" class="btn btn-primary btn-small" data-i18n="mobile.cta">See programs</a>
 </div>
 
 <footer class="site-footer">
@@ -548,20 +432,19 @@ blockquote cite{ display:block; margin-top:12px; font-style:normal; color:var(--
       <p class="footer-slogan" data-i18n="footer.slogan">Learn. Build. Transform.</p>
     </div>
     <p class="footer-legal" data-i18n="footer.legal">© 2026 NextGen AI School. All rights reserved.</p>
-    <p class="footer-disclaimer" data-i18n="footer.disclaimer">Payment accounts rotate automatically to manage exposure. By enrolling you agree to our refund policy and terms. This is a digital education service; no guarantee of specific results is implied.</p>
+    <p class="footer-disclaimer" data-i18n="footer.disclaimer">Digital education service.</p>
   </div>
 </footer>
 
-<!-- Modal de pago -->
 <div class="modal-backdrop" id="pay-modal" role="dialog" aria-modal="true">
   <div class="modal">
     <button type="button" class="modal-close" id="pay-close" aria-label="Close">✕</button>
     <p class="eyebrow-plain" data-i18n="modal.title">Secure checkout</p>
     <h3 id="modal-course-name"></h3>
-    <p class="course-price" id="modal-price"></p>
-    <p data-i18n="modal.subtitle" style="font-size:.9rem;color:var(--text-mute);">Choose your payment route:</p>
+    <p class="modal-price" id="modal-price"></p>
+    <p class="modal-sub" data-i18n="modal.subtitle">Choose your payment method:</p>
     <div class="gw-list" id="gw-list"></div>
-    <p class="modal-secure" data-i18n="modal.secure">Your payment is processed by our gateway. We never see or store your card details.</p>
+    <p class="modal-secure" data-i18n="modal.secure">Your payment is processed by our gateway.</p>
   </div>
 </div>
 
@@ -574,7 +457,6 @@ blockquote cite{ display:block; margin-top:12px; font-style:normal; color:var(--
     <div id="admin-login">
       <label for="admin-pass">Contraseña de administrador</label>
       <input type="password" id="admin-pass" placeholder="Ingresa la contraseña">
-      <p class="admin-hint">Contraseña por defecto: <code>nextgen-2026</code> — cámbiala al ingresar por primera vez.</p>
       <div class="admin-actions">
         <button type="button" class="btn btn-primary" id="admin-login-btn">Ingresar</button>
       </div>
@@ -583,11 +465,10 @@ blockquote cite{ display:block; margin-top:12px; font-style:normal; color:var(--
 
     <div id="admin-panel" hidden>
       <div class="admin-hint">
-        La rotación elige automáticamente la primera pasarela habilitada donde
-        <strong>acumulado + precio &le; tope</strong>. Cuando se acerca al tope, la página
-        rota a la siguiente cuenta automáticamente. Actualiza el "acumulado" desde el
-        dashboard de cada pasarela. Cambios no destruyen la config embebida del archivo:
-        se guardan como sobreescritura local y se pueden exportar como JSON para hosting remoto.
+        La rotación elige la primera pasarela habilitada donde <strong>acumulado + precio &le; tope</strong>.
+        Lo que guardas aquí solo se aplica en este navegador. Para que lo vean todos los visitantes,
+        pulsa <strong>Exportar JSON</strong> y pega el resultado en <code>payment-config.json</code> en GitHub.
+        Los precios de los cursos se editan en el <code>index.html</code>.
       </div>
 
       <label><input type="checkbox" id="admin-autorotate" style="width:auto;display:inline;margin-right:6px;"> Rotación automática activa</label>
@@ -598,11 +479,11 @@ blockquote cite{ display:block; margin-top:12px; font-style:normal; color:var(--
         <button type="button" class="btn btn-primary" id="admin-save">Guardar cambios</button>
         <button type="button" class="btn btn-ghost" id="admin-export">Exportar JSON</button>
         <button type="button" class="btn btn-ghost" id="admin-import-btn">Importar JSON</button>
-        <button type="button" class="btn btn-ghost" id="admin-reset">Restablecer a config embebida</button>
+        <button type="button" class="btn btn-ghost" id="admin-reset">Restablecer</button>
         <button type="button" class="btn btn-ghost" id="admin-pass-btn">Cambiar contraseña</button>
         <button type="button" class="btn btn-ghost" id="admin-logout">Salir</button>
       </div>
-      <textarea id="admin-export-box" rows="6" hidden></textarea>
+      <textarea id="admin-export-box" rows="8" hidden></textarea>
       <input type="file" id="admin-import-file" accept=".json,application/json" hidden>
       <p class="admin-msg" id="admin-msg"></p>
     </div>
@@ -614,28 +495,33 @@ blockquote cite{ display:block; margin-top:12px; font-style:normal; color:var(--
 "use strict";
 
 /* =========================================================
-   1. CONFIGURACIÓN EMBEBIDA (fuente por defecto)
-   Editable desde el panel admin (#/admin) y exportable a JSON.
+   1. CONFIGURACIÓN
+   - Precios, textos y beneficios: se editan aquí.
+   - Pasarelas (links, acumulado, tope, habilitada, prioridad),
+     rotación y cohorte: se pueden sobreescribir desde
+     payment-config.json (REMOTE_CONFIG_URL).
    ========================================================= */
-var REMOTE_CONFIG_URL = ""; // Opcional: URL de payment-config.json hosteado (ver PLAN-IMPLEMENTACION.md)
+var REMOTE_CONFIG_URL = "payment-config.json";
 
 var EMBEDDED_CONFIG = {
-  "version": 1,
+  "version": 2,
   "settings": {
     "autoRotate": true,
     "defaultCap": 1000,
-    "cohort": { "en": "Next live cohort: <strong>November 17</strong> · <strong>14</strong> seats left", "es": "Próxima cohorte en vivo: <strong>17 de noviembre</strong> · quedan <strong>14</strong> cupos" }
+    "cohort": {
+      "en": "Next live cohort: <strong>November 17</strong>",
+      "es": "Próxima cohorte en vivo: <strong>17 de noviembre</strong>"
+    }
   },
   "courses": [
     {
       "id": "automation",
+      "level": { "en": "Level 1 · Start", "es": "Nivel 1 · Empieza" },
       "name": { "en": "AI Business Automation", "es": "Automatización de Negocios con IA" },
       "tagline": { "en": "Automate support, leads, and operations with AI agents — no code required.", "es": "Automatiza soporte, leads y operaciones con agentes de IA — sin necesidad de código." },
       "audience": { "en": "For business owners and operators", "es": "Para dueños de negocio y operaciones" },
-      "price": 347,
-      "wasPrice": 447,
-      "popular": true,
-      "badge": { "en": "Most popular", "es": "El más popular" },
+      "price": 147,
+      "popular": false,
       "features": [
         { "en": "6 live modules + recordings", "es": "6 módulos en vivo + grabaciones" },
         { "en": "No-code agent building toolkit", "es": "Kit de construcción de agentes sin código" },
@@ -644,19 +530,19 @@ var EMBEDDED_CONFIG = {
         { "en": "Private student community", "es": "Comunidad privada de estudiantes" }
       ],
       "gateways": [
-        { "id": "wompi-auto", "processor": "Wompi (Bancolombia)", "name": "Wompi", "link": "https://checkout.wompi.co/p/REEMPLAZAR_LINK_AUTOMATION_1", "accumulated": 0, "cap": 1000, "enabled": true, "priority": 1 },
-        { "id": "epayco-auto", "processor": "ePayco", "name": "ePayco", "link": "https://checkout.epayco.co/REEMPLAZAR_LINK_AUTOMATION_2", "accumulated": 0, "cap": 1000, "enabled": false, "priority": 2 }
+        { "id": "wompi-auto", "processor": "Wompi (Bancolombia)", "name": "Wompi", "link": "", "accumulated": 0, "cap": 1000, "enabled": true, "priority": 1 },
+        { "id": "epayco-auto", "processor": "ePayco", "name": "ePayco", "link": "", "accumulated": 0, "cap": 1000, "enabled": false, "priority": 2 }
       ]
     },
     {
       "id": "builder",
+      "level": { "en": "Level 2 · Build", "es": "Nivel 2 · Construye" },
       "name": { "en": "AI Agent Builder", "es": "Constructor de Agentes de IA" },
       "tagline": { "en": "Go from zero to shipping your own autonomous AI agents connected to your tools.", "es": "Ve de cero a desplegar tus propios agentes autónomos conectados a tus herramientas." },
       "audience": { "en": "For builders, marketers & operators", "es": "Para constructores, marketing y operaciones" },
-      "price": 497,
-      "wasPrice": 647,
-      "popular": false,
-      "badge": { "en": "Flagship", "es": "Programa insignia" },
+      "price": 247,
+      "popular": true,
+      "badge": { "en": "Recommended", "es": "Recomendado" },
       "features": [
         { "en": "6 live modules + recordings", "es": "6 módulos en vivo + grabaciones" },
         { "en": "Build 3 agents in production", "es": "Construye 3 agentes en producción" },
@@ -665,19 +551,18 @@ var EMBEDDED_CONFIG = {
         { "en": "Certificate of completion", "es": "Certificado de finalización" }
       ],
       "gateways": [
-        { "id": "wompi-builder", "processor": "Wompi (Bancolombia)", "name": "Wompi", "link": "https://checkout.wompi.co/p/REEMPLAZAR_LINK_BUILDER_1", "accumulated": 0, "cap": 1000, "enabled": true, "priority": 1 },
-        { "id": "epayco-builder", "processor": "ePayco", "name": "ePayco", "link": "https://checkout.epayco.co/REEMPLAZAR_LINK_BUILDER_2", "accumulated": 0, "cap": 1000, "enabled": false, "priority": 2 }
+        { "id": "wompi-builder", "processor": "Wompi (Bancolombia)", "name": "Wompi", "link": "", "accumulated": 0, "cap": 1000, "enabled": true, "priority": 1 },
+        { "id": "epayco-builder", "processor": "ePayco", "name": "ePayco", "link": "", "accumulated": 0, "cap": 1000, "enabled": false, "priority": 2 }
       ]
     },
     {
       "id": "agency",
+      "level": { "en": "Level 3 · Launch", "es": "Nivel 3 · Lanza" },
       "name": { "en": "AI Agency Launch", "es": "Lanzamiento de Agencia de IA" },
       "tagline": { "en": "Launch and sell AI automation services to local businesses and online brands.", "es": "Lanza y vende servicios de automatización con IA a negocios locales y marcas online." },
       "audience": { "en": "For freelancers & aspiring agency owners", "es": "Para freelancers y futuros dueños de agencia" },
-      "price": 697,
-      "wasPrice": 897,
+      "price": 397,
       "popular": false,
-      "badge": { "en": "Premium", "es": "Premium" },
       "features": [
         { "en": "Everything in Agent Builder", "es": "Todo lo del programa Constructor" },
         { "en": "Pricing & sales playbook for AI services", "es": "Playbook de precios y ventas de servicios de IA" },
@@ -686,16 +571,14 @@ var EMBEDDED_CONFIG = {
         { "en": "Agency community access", "es": "Acceso a la comunidad de agencias" }
       ],
       "gateways": [
-        { "id": "wompi-agency", "processor": "Wompi (Bancolombia)", "name": "Wompi", "link": "https://checkout.wompi.co/p/REEMPLAZAR_LINK_AGENCY_1", "accumulated": 0, "cap": 1000, "enabled": true, "priority": 1 },
-        { "id": "epayco-agency", "processor": "ePayco", "name": "ePayco", "link": "https://checkout.epayco.co/REEMPLAZAR_LINK_AGENCY_2", "accumulated": 0, "cap": 1000, "enabled": false, "priority": 2 }
+        { "id": "wompi-agency", "processor": "Wompi (Bancolombia)", "name": "Wompi", "link": "", "accumulated": 0, "cap": 1000, "enabled": true, "priority": 1 },
+        { "id": "epayco-agency", "processor": "ePayco", "name": "ePayco", "link": "", "accumulated": 0, "cap": 1000, "enabled": false, "priority": 2 }
       ]
     }
   ],
-  "testimonials": [
-    { "text": { "en": "I finished the program with an agent that filters and answers my support emails every day.", "es": "Salí del programa con un agente que hoy filtra y responde mis correos de soporte." }, "cite": { "en": "Student, pilot cohort", "es": "Estudiante, cohorte piloto" } },
-    { "text": { "en": "I finally understood the difference between 'using' AI and building something that runs on its own.", "es": "Por fin entendí la diferencia entre 'usar' IA y construir algo que funciona solo." }, "cite": { "en": "Student, pilot cohort", "es": "Estudiante, cohorte piloto" } },
-    { "text": { "en": "The automation module saved me real hours every week in my business.", "es": "El módulo de automatización me ahorró horas reales cada semana en mi negocio." }, "cite": { "en": "Student, pilot cohort", "es": "Estudiante, cohorte piloto" } }
-  ],
+  /* Déjalo vacío hasta tener testimonios reales; la sección se oculta sola.
+     Formato: { "text": {"en":"...","es":"..."}, "cite": {"en":"Name, role","es":"Nombre, cargo"} } */
+  "testimonials": [],
   "bonuses": [
     { "title": { "en": "Prompt & flow library", "es": "Librería de prompts y flujos base" }, "body": { "en": "Startup templates for the most requested agents: support, lead scoring, and research.", "es": "Plantillas de arranque para los agentes más pedidos: soporte, calificación de leads e investigación." } },
     { "title": { "en": "1:1 review session", "es": "Sesión de revisión 1:1" }, "body": { "en": "30 minutes with the teaching team to review your portfolio agent before publishing.", "es": "30 minutos con el equipo docente para revisar el agente de tu portafolio antes de publicarlo." } },
@@ -711,26 +594,29 @@ var EMBEDDED_CONFIG = {
 };
 
 /* =========================================================
-   2. DICCIONARIO I18N (EN/ES)
+   2. TEXTOS EN / ES
    ========================================================= */
 var I18N = {
   "en": {
-    "nav.courses": "Courses", "nav.method": "Method", "nav.faq": "FAQ", "nav.pricing": "Pricing",
+    "nav.courses": "Courses", "nav.method": "Method", "nav.faq": "FAQ",
     "header.cta": "Enroll now",
-    "hero.eyebrow": "Live cohort · Limited seats",
+    "hero.eyebrow": "Live online cohorts · English & Spanish",
     "hero.title": "Learn to build AI agents that work for you — not just to use a chatbot.",
     "hero.sub": "NextGen AI School takes you from zero to shipping your own autonomous AI agents: systems that research, decide, and execute real work, connected to the tools you already use.",
-    "hero.cta1": "I want to enroll", "hero.cta2": "See the courses", "hero.slogan": "Learn. Build. Transform.",
-    "proof.students": "students trained", "proof.countries": "countries in the community", "proof.completion": "program completion rate", "proof.rating": "average rating",
+    "hero.cta1": "See programs & prices", "hero.cta2": "How it works",
+    "hero.from": "Programs from USD {p} · 7-day money-back guarantee",
+    "hero.slogan": "Learn. Build. Transform.",
+    "proof.s1": "live modules per program", "proof.s2": "per week, live + hands-on", "proof.s3": "live cohorts in both languages", "proof.s4": "day money-back guarantee",
     "why.title": "The market no longer rewards people who \"know how to use AI\".",
-    "why.body": "It rewards people who can build with it. The most in-demand AI training in 2026 isn't basic chatbot usage — it's designing agents that automate entire workflows: support, sales, research, operations. That's exactly what you'll master here.",
+    "why.body": "It rewards people who can build with it: designing agents that automate whole workflows — support, sales, research, operations. That's what you'll practice here, step by step.",
     "why.item1": "Design agents with memory, tools, and their own goals.",
     "why.item2": "Connect your agents to APIs, spreadsheets, CRMs, and payment gateways.",
     "why.item3": "Automate real business workflows, not lab demos.",
     "why.item4": "Leave with a portfolio of agents running in production.",
     "courses.eyebrow": "The programs",
     "courses.title": "Three paths. One skill: building with AI.",
-    "courses.sub": "Choose the program that fits where you are today. Every course is live, hands-on, and taught by people who ship AI in production.",
+    "courses.sub": "Choose the program that fits where you are today. Every course is live, hands-on, and comes with a 7-day money-back guarantee.",
+    "course.cta": "Enroll now", "course.per": "One-time payment · Lifetime access",
     "method.eyebrow": "How it works",
     "method.title": "Less slides, more working sessions.",
     "method.body": "Weekly live sessions, hands-on challenges between classes, and a staff review of your agent before you move to the next module.",
@@ -740,46 +626,47 @@ var I18N = {
     "method.s4t": "Launch", "method.s4d": "— you ship it as part of your final portfolio.",
     "instructor.eyebrow": "Who teaches",
     "instructor.title": "A team that builds AI agents in production — not just in slides.",
-    "instructor.body": "NextGen's teaching team comes from real AI automation and integration projects in digital businesses — not recycled generic courses. You'll learn from real cases, including the mistakes.",
+    "instructor.body": "NextGen's teaching team comes from real AI automation and integration projects in digital businesses. You'll learn from real cases, including the mistakes.",
     "testimonials.eyebrow": "What students say",
-    "testimonials.note": "* Illustrative testimonials from the pilot phase — replace with real quotes before launch.",
-    "bonuses.eyebrow": "Enroll today and get",
+    "bonuses.eyebrow": "Included when you enroll",
     "bonuses.title": "Three extra pieces for your blueprint",
-    "pay.eyebrow": "Investment",
-    "pay.title": "One payment. Full access.",
-    "pay.note": "Secure card payment in USD, processed by our payment gateway. Choose your course above and pick your payment method at checkout.",
+    "pay.eyebrow": "Next step",
+    "pay.title": "Ready to build your first agent?",
+    "pay.note": "Pick a program, pay securely by card in USD, and join the next live cohort.",
+    "pay.cta": "Choose your program",
     "pay.trustGuarantee": "7-day money-back guarantee",
     "pay.secure": "SSL encrypted · We never store your card details",
     "guarantee.title": "7-day money-back guarantee",
     "guarantee.body": "Try the first week risk-free. If the program isn't for you, we refund 100% of your payment. No awkward questions.",
     "footer.slogan": "Learn. Build. Transform.",
     "footer.legal": "© 2026 NextGen AI School. All rights reserved.",
-    "footer.disclaimer": "Payment accounts rotate automatically to manage exposure. By enrolling you agree to our refund policy and terms. This is a digital education service; no guarantee of specific results is implied.",
+    "footer.disclaimer": "By enrolling you agree to our refund policy and terms. This is a digital education service; no guarantee of specific results is implied.",
     "modal.title": "Secure checkout",
-    "modal.subtitle": "Choose your payment route:",
-    "modal.secure": "Your payment is processed by our gateway. We never see or store your card details.",
-    "modal.near": "Only a few seats left on this payment route — it may rotate automatically.",
-    "modal.none": "All payment routes are temporarily unavailable. Please contact support.",
-    "mobile.cta": "Enroll",
-    "course.cta": "Enroll now", "course.ctaOne": "Enroll in this course"
+    "modal.subtitle": "Choose your payment method:",
+    "modal.secure": "Your payment is processed by our payment gateway. We never see or store your card details.",
+    "modal.none": "Checkout for this program is being set up. Please check back shortly.",
+    "mobile.from": "From USD {p}", "mobile.cta": "See programs"
   },
   "es": {
-    "nav.courses": "Cursos", "nav.method": "Método", "nav.faq": "FAQ", "nav.pricing": "Precios",
+    "nav.courses": "Cursos", "nav.method": "Método", "nav.faq": "FAQ",
     "header.cta": "Inscribirme",
-    "hero.eyebrow": "Cohorte en vivo · Cupos limitados",
+    "hero.eyebrow": "Cohortes en vivo online · Inglés y español",
     "hero.title": "Aprende a construir agentes de IA que trabajan por ti — no solo a usar un chatbot.",
     "hero.sub": "NextGen AI School te lleva de cero a desplegar tus propios agentes autónomos: sistemas que investigan, deciden y ejecutan tareas reales, conectados a tus herramientas de trabajo.",
-    "hero.cta1": "Quiero inscribirme", "hero.cta2": "Ver los cursos", "hero.slogan": "Aprende. Construye. Transforma.",
-    "proof.students": "estudiantes formados", "proof.countries": "países en la comunidad", "proof.completion": "termina el programa", "proof.rating": "valoración promedio",
+    "hero.cta1": "Ver programas y precios", "hero.cta2": "Cómo funciona",
+    "hero.from": "Programas desde USD {p} · Garantía de devolución de 7 días",
+    "hero.slogan": "Aprende. Construye. Transforma.",
+    "proof.s1": "módulos en vivo por programa", "proof.s2": "por semana, en vivo + práctica", "proof.s3": "cohortes en vivo en ambos idiomas", "proof.s4": "días de garantía de devolución",
     "why.title": "El mercado ya no premia a quien \"sabe usar IA\".",
-    "why.body": "Premia a quien sabe construir con ella. La formación de IA con mayor demanda en 2026 ya no es el uso básico de un chatbot: es diseñar agentes que automatizan procesos completos — soporte, ventas, investigación, operaciones. Eso es exactamente lo que dominarás aquí.",
+    "why.body": "Premia a quien sabe construir con ella: diseñar agentes que automatizan procesos completos — soporte, ventas, investigación, operaciones. Eso es lo que practicarás aquí, paso a paso.",
     "why.item1": "Diseña agentes con memoria, herramientas y objetivos propios.",
     "why.item2": "Conecta tus agentes a APIs, hojas de cálculo, CRMs y pasarelas de pago.",
     "why.item3": "Automatiza flujos reales de negocio, no demos de laboratorio.",
     "why.item4": "Sal del programa con agentes funcionando en producción.",
     "courses.eyebrow": "Los programas",
     "courses.title": "Tres rutas. Una habilidad: construir con IA.",
-    "courses.sub": "Elige el programa que se ajusta a dónde estás hoy. Cada curso es en vivo, práctico y dictado por personas que construyen IA en producción.",
+    "courses.sub": "Elige el programa que se ajusta a dónde estás hoy. Cada curso es en vivo, práctico y con garantía de devolución de 7 días.",
+    "course.cta": "Inscribirme", "course.per": "Pago único · Acceso de por vida",
     "method.eyebrow": "Cómo se estudia",
     "method.title": "Menos slides, más trabajo real.",
     "method.body": "Sesiones en vivo semanales, retos prácticos entre clase y clase, y revisión de tu agente por el equipo docente antes de avanzar al siguiente módulo.",
@@ -789,78 +676,103 @@ var I18N = {
     "method.s4t": "Lanza", "method.s4d": "— lo entregas como parte de tu portafolio final.",
     "instructor.eyebrow": "Quién enseña",
     "instructor.title": "Un equipo que construye agentes de IA en producción, no solo en diapositivas.",
-    "instructor.body": "El cuerpo docente de NextGen proviene de proyectos reales de automatización e integración de IA en negocios digitales — no de cursos genéricos reciclados. Aprenderás con casos reales, incluidos los errores.",
+    "instructor.body": "El cuerpo docente de NextGen proviene de proyectos reales de automatización e integración de IA en negocios digitales. Aprenderás con casos reales, incluidos los errores.",
     "testimonials.eyebrow": "Lo que dicen los estudiantes",
-    "testimonials.note": "* Testimonios ilustrativos de la fase piloto — reemplázalos por citas reales antes de publicar.",
-    "bonuses.eyebrow": "Al inscribirte hoy",
+    "bonuses.eyebrow": "Incluido al inscribirte",
     "bonuses.title": "Tres piezas extra para tu plano",
-    "pay.eyebrow": "Inversión",
-    "pay.title": "Un pago. Acceso completo.",
-    "pay.note": "Pago seguro con tarjeta en USD, procesado por nuestra pasarela. Elige tu curso arriba y selecciona tu método de pago al finalizar la compra.",
+    "pay.eyebrow": "Siguiente paso",
+    "pay.title": "¿Listo para construir tu primer agente?",
+    "pay.note": "Elige un programa, paga seguro con tarjeta en USD y únete a la próxima cohorte en vivo.",
+    "pay.cta": "Elegir mi programa",
     "pay.trustGuarantee": "Garantía de devolución de 7 días",
     "pay.secure": "Cifrado SSL · Nunca almacenamos los datos de tu tarjeta",
     "guarantee.title": "Garantía de 7 días",
     "guarantee.body": "Prueba la primera semana sin riesgo. Si el programa no es para ti, te devolvemos el 100% de tu pago. Sin preguntas incómodas.",
     "footer.slogan": "Aprende. Construye. Transforma.",
     "footer.legal": "© 2026 NextGen AI School. Todos los derechos reservados.",
-    "footer.disclaimer": "Las cuentas de pago rotan automáticamente para gestionar la exposición. Al inscribirte aceptas nuestra política de reembolso y términos. Este es un servicio educativo digital; no se garantizan resultados específicos.",
+    "footer.disclaimer": "Al inscribirte aceptas nuestra política de reembolso y términos. Este es un servicio educativo digital; no se garantizan resultados específicos.",
     "modal.title": "Pago seguro",
-    "modal.subtitle": "Elige tu vía de pago:",
-    "modal.secure": "Tu pago es procesado por nuestra pasarela. Nunca vemos ni almacenamos los datos de tu tarjeta.",
-    "modal.near": "Quedan pocos cupos en esta vía de pago — puede rotar automáticamente.",
-    "modal.none": "Todas las vías de pago están temporalmente no disponibles. Contacta con soporte.",
-    "mobile.cta": "Inscribirme",
-    "course.cta": "Inscribirme", "course.ctaOne": "Inscribirme en este curso"
+    "modal.subtitle": "Elige tu método de pago:",
+    "modal.secure": "Tu pago es procesado por nuestra pasarela de pagos. Nunca vemos ni almacenamos los datos de tu tarjeta.",
+    "modal.none": "El pago de este programa se está configurando. Vuelve a intentarlo en unos minutos.",
+    "mobile.from": "Desde USD {p}", "mobile.cta": "Ver programas"
   }
 };
 
 /* =========================================================
    3. ESTADO Y UTILIDADES
    ========================================================= */
-var STORAGE_KEY = "nga_config_v1";
-var PASS_KEY = "nga_admin_pass_v1";
-var SESSION_KEY = "nga_admin_session_v1";
+var STORAGE_KEY = "nga_config_v2";
+var REMOTE_CACHE_KEY = "nga_remote_config_v2";
+var PASS_KEY = "nga_admin_pass_v2";
+var SESSION_KEY = "nga_admin_session_v2";
 var LANG_KEY = "nga_lang";
 var DEFAULT_PASS = "nextgen-2026";
 
 var CONFIG = null;
 var LANG = "en";
 
-function deepMerge(base, over) {
-  if (typeof over !== "object" || over === null) return over === undefined ? base : over;
-  if (Array.isArray(base) && Array.isArray(over)) return over;
-  if (Array.isArray(over)) return over;
-  var out = {};
-  var k;
-  for (k in base) out[k] = deepMerge(base[k], over[k]);
-  for (k in over) if (!(k in base)) out[k] = over[k];
-  return out;
+function clone(o) { return JSON.parse(JSON.stringify(o)); }
+function esc(s) {
+  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+function money(n) { return Number(n).toLocaleString("en-US"); }
+function t(key) { return (I18N[LANG] && I18N[LANG][key]) || I18N.en[key] || key; }
+
+/* Aplica sobreescrituras: solo pasarelas por curso (id) y ajustes. Los precios NUNCA se sobreescriben. */
+function applyOverrides(cfg, over) {
+  if (!over || typeof over !== "object") return cfg;
+  if (over.settings) {
+    if (typeof over.settings.autoRotate === "boolean") cfg.settings.autoRotate = over.settings.autoRotate;
+    if (over.settings.defaultCap > 0) cfg.settings.defaultCap = Number(over.settings.defaultCap);
+    if (over.settings.cohort && (over.settings.cohort.en || over.settings.cohort.es)) {
+      cfg.settings.cohort = {
+        en: over.settings.cohort.en || cfg.settings.cohort.en,
+        es: over.settings.cohort.es || cfg.settings.cohort.es
+      };
+    }
+  }
+  if (Array.isArray(over.courses)) {
+    over.courses.forEach(function(oc) {
+      if (!oc || !Array.isArray(oc.gateways)) return;
+      for (var i = 0; i < cfg.courses.length; i++) {
+        if (cfg.courses[i].id === oc.id) { cfg.courses[i].gateways = oc.gateways; break; }
+      }
+    });
+  }
+  return cfg;
 }
 
-function clone(obj) { return JSON.parse(JSON.stringify(obj)); }
+function buildOverrides(cfg, full) {
+  var out = {
+    version: 2,
+    settings: { autoRotate: !!cfg.settings.autoRotate },
+    courses: cfg.courses.map(function(c) { return { id: c.id, gateways: c.gateways || [] }; })
+  };
+  if (full) {
+    out.settings.defaultCap = cfg.settings.defaultCap;
+    out.settings.cohort = cfg.settings.cohort;
+  }
+  return out;
+}
 
 function getConfig() {
   var cfg = clone(EMBEDDED_CONFIG);
   try {
     var saved = localStorage.getItem(STORAGE_KEY);
-    if (saved) { cfg = deepMerge(cfg, JSON.parse(saved)); }
+    if (saved) applyOverrides(cfg, JSON.parse(saved));
   } catch (e) {}
   if (REMOTE_CONFIG_URL) {
     try {
-      var remote = localStorage.getItem("nga_remote_config");
-      if (remote) { cfg = deepMerge(cfg, JSON.parse(remote)); }
+      var remote = localStorage.getItem(REMOTE_CACHE_KEY);
+      if (remote) applyOverrides(cfg, JSON.parse(remote));
     } catch (e) {}
   }
   return cfg;
 }
 
 function saveConfig(cfg) {
-  CONFIG = cfg;
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(cfg)); } catch (e) {}
-}
-
-function t(key) {
-  return (I18N[LANG] && I18N[LANG][key]) || (I18N.en[key]) || key;
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(buildOverrides(cfg, false))); } catch (e) {}
 }
 
 function applyLang() {
@@ -875,13 +787,10 @@ function applyLang() {
   }
 }
 
-/* Hash simple (fallback cuando crypto.subtle no está disponible) */
+/* Contraseña del panel: solo puerta de interfaz (no es seguridad real) */
 function fnvHash(str) {
   var h = 2166136261;
-  for (var i = 0; i < str.length; i++) {
-    h ^= str.charCodeAt(i);
-    h = Math.imul(h, 16777619);
-  }
+  for (var i = 0; i < str.length; i++) { h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); }
   return ("00000000" + (h >>> 0).toString(16)).slice(-8);
 }
 function hashPass(pass) {
@@ -890,37 +799,36 @@ function hashPass(pass) {
     return crypto.subtle.digest("SHA-256", data).then(function(buf) {
       var a = new Uint8Array(buf), hex = "";
       for (var i = 0; i < a.length; i++) hex += ("0" + a[i].toString(16)).slice(-2);
-      return hex;
-    }).catch(function(){ return Promise.resolve("fnv_" + fnvHash(pass)); });
+      return "sha_" + hex;
+    }).catch(function() { return "fnv_" + fnvHash("nga:" + pass); });
   }
-  return Promise.resolve("fnv_" + fnvHash(pass));
+  return Promise.resolve("fnv_" + fnvHash("nga:" + pass));
 }
 function getStoredPass() {
   try { return localStorage.getItem(PASS_KEY); } catch (e) { return null; }
 }
-function defaultPassHash() {
-  return "fnv_" + fnvHash("nga:" + DEFAULT_PASS);
+function checkPass(input) {
+  var stored = getStoredPass();
+  if (!stored) return Promise.resolve(input === DEFAULT_PASS);
+  return hashPass(input).then(function(h) { return h === stored; });
 }
 
 /* =========================================================
-   4. RENDER DE LA PÁGINA
+   4. RENDER
    ========================================================= */
-function esc(s) {
-  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-}
-function fmtMoney(n) {
-  return "$" + Number(n).toLocaleString("en-US", { minimumFractionDigits: 0, maximumFractionDigits: 0 });
-}
-
 function renderCohort() {
   var el = document.getElementById("cohort-text");
   if (el) el.innerHTML = CONFIG.settings.cohort[LANG] || CONFIG.settings.cohort.en;
 }
 
-/* Rotación: primeras pasarelas habilitadas cuyo acumulado + precio <= tope */
+function validLink(l) {
+  return !!l && /^https?:\/\//i.test(l) && !/REEMPLAZAR/i.test(l);
+}
+
+/* Rotación: pasarelas habilitadas, con link real, y acumulado + precio <= tope */
 function availableGateways(course) {
   var gws = (course.gateways || []).filter(function(g) {
-    return g.enabled && g.link && /^https?:\/\//i.test(g.link);
+    return g.enabled && validLink(g.link);
   }).sort(function(a, b) { return (a.priority || 99) - (b.priority || 99); });
   if (!CONFIG.settings.autoRotate) return gws;
   return gws.filter(function(g) {
@@ -934,33 +842,36 @@ function renderCourses() {
   CONFIG.courses.forEach(function(c) {
     var card = document.createElement("article");
     card.className = "course-card" + (c.popular ? " popular" : "");
-    var badge = c.popular ? '<span class="course-badge">' + esc(c.badge[LANG]) + "</span>" : "";
-    var was = c.wasPrice ? '<span class="was">' + fmtMoney(c.wasPrice) + "</span>" : "";
+    var badge = (c.popular && c.badge) ? '<span class="course-badge">' + esc(c.badge[LANG]) + "</span>" : "";
+    var level = c.level ? '<p class="course-level">' + esc(c.level[LANG]) + "</p>" : "";
     card.innerHTML =
-      badge +
-      '<p class="course-name">' + esc(c.id) + "</p>" +
+      badge + level +
       "<h3>" + esc(c.name[LANG]) + "</h3>" +
       '<p class="course-tagline">' + esc(c.tagline[LANG]) + "</p>" +
+      '<div class="course-price"><span class="amount"><span class="cur">USD</span>' + money(c.price) + "</span>" +
+        '<span class="per">' + esc(t("course.per")) + "</span></div>" +
       '<p class="course-audience">' + esc(c.audience[LANG]) + "</p>" +
       '<ul class="course-feats">' + c.features.map(function(f) { return "<li>" + esc(f[LANG]) + "</li>"; }).join("") + "</ul>" +
-      '<div class="course-price">' +
-        '<span class="amount"><span class="cur">USD</span>' + Number(c.price).toLocaleString("en-US") + "</span>" + was +
-        '<span class="per"> · ' + t("modal.title") + "</span>" +
-      "</div>" +
-      '<button type="button" class="btn btn-primary btn-large" data-course="' + esc(c.id) + '">' + t("course.cta") + "</button>";
+      '<button type="button" class="btn ' + (c.popular ? "btn-primary" : "btn-ghost") + ' btn-large" data-course="' + esc(c.id) + '">' + esc(t("course.cta")) + "</button>";
     grid.appendChild(card);
   });
-  grid.querySelectorAll("[data-course]").forEach(function(btn) {
-    btn.addEventListener("click", function() { openPayment(btn.getAttribute("data-course")); });
-  });
+  var btns = grid.querySelectorAll("[data-course]");
+  for (var i = 0; i < btns.length; i++) {
+    (function(btn) {
+      btn.addEventListener("click", function() { openPayment(btn.getAttribute("data-course")); });
+    })(btns[i]);
+  }
 }
 
 function renderTestimonials() {
+  var sec = document.getElementById("testimonials");
   var grid = document.getElementById("testi-grid");
   grid.innerHTML = "";
-  CONFIG.testimonials.forEach(function(tst) {
+  var list = CONFIG.testimonials || [];
+  sec.hidden = list.length === 0;
+  list.forEach(function(tst) {
     var bq = document.createElement("blockquote");
-    bq.innerHTML = "&ldquo;" + esc(tst.text[LANG]) + "&rdquo; <cite>— " + esc(tst.cite[LANG]) + "</cite>";
+    bq.innerHTML = "&ldquo;" + esc(tst.text[LANG]) + "&rdquo; — " + esc(tst.cite[LANG]) + "";
     grid.appendChild(bq);
   });
 }
@@ -992,15 +903,19 @@ function renderAll() {
   renderTestimonials();
   renderBonuses();
   renderFaq();
-  var mp = document.getElementById("mobile-price");
   var cheapest = Math.min.apply(null, CONFIG.courses.map(function(c) { return c.price; }));
-  if (mp) mp.textContent = "From USD " + Number(cheapest).toLocaleString("en-US");
+  var p = money(cheapest);
+  var mp = document.getElementById("mobile-price");
+  if (mp) mp.textContent = t("mobile.from").replace("{p}", p);
+  var hf = document.getElementById("hero-from");
+  if (hf) hf.textContent = t("hero.from").replace("{p}", p);
 }
 
 /* =========================================================
    5. MODAL DE PAGO
    ========================================================= */
 var modal = document.getElementById("pay-modal");
+
 function openPayment(courseId) {
   var course = null;
   for (var i = 0; i < CONFIG.courses.length; i++) {
@@ -1008,9 +923,9 @@ function openPayment(courseId) {
   }
   if (!course) return;
   document.getElementById("modal-course-name").textContent = course.name[LANG];
-  var priceEl = document.getElementById("modal-price");
-  var was = course.wasPrice ? '<span class="was" style="text-decoration:line-through;color:var(--text-mute);margin-left:8px;">' + fmtMoney(course.wasPrice) + "</span>" : "";
-  priceEl.innerHTML = '<span class="amount" style="font-family:var(--font-display);font-weight:700;font-size:1.8rem;color:var(--ink-navy);"><span class="cur" style="color:var(--signal-teal);font-size:.85rem;margin-right:3px;">USD</span>' + Number(course.price).toLocaleString("en-US") + "</span>" + was;
+  document.getElementById("modal-price").innerHTML =
+    '<span style="font-family:var(--font-display);font-weight:700;font-size:1.8rem;color:var(--ink-navy);">' +
+    '<span style="color:var(--signal-teal);font-size:.85rem;margin-right:3px;">USD</span>' + money(course.price) + "</span>";
 
   var list = document.getElementById("gw-list");
   list.innerHTML = "";
@@ -1022,22 +937,15 @@ function openPayment(courseId) {
     list.appendChild(div);
   } else {
     gws.forEach(function(g) {
-      var near = (g.accumulated || 0) + (course.price || 0) > (g.cap || CONFIG.settings.defaultCap || 1000) * 0.85;
       var a = document.createElement("a");
       a.className = "gw-btn";
       a.href = g.link;
       a.target = "_blank";
-      a.rel = "noopener sponsored";
+      a.rel = "noopener noreferrer";
       a.innerHTML =
-        '<span><strong>' + esc(g.name) + "</strong><small>" + esc(g.processor || "") + "</small></span>" +
+        "<span><strong>" + esc(g.name) + "</strong><small>" + esc(g.processor || "") + "</small></span>" +
         '<span class="pay-arrow">→</span>';
       list.appendChild(a);
-      if (near) {
-        var warn = document.createElement("p");
-        warn.className = "gw-warn";
-        warn.textContent = t("modal.near");
-        list.appendChild(warn);
-      }
     });
   }
   modal.classList.add("open");
@@ -1055,9 +963,12 @@ function setLang(l) {
   applyLang();
   renderAll();
 }
-document.querySelectorAll(".lang-toggle button").forEach(function(btn) {
-  btn.addEventListener("click", function() { setLang(btn.getAttribute("data-lang")); });
-});
+var langBtns = document.querySelectorAll(".lang-toggle button");
+for (var lb = 0; lb < langBtns.length; lb++) {
+  (function(btn) {
+    btn.addEventListener("click", function() { setLang(btn.getAttribute("data-lang")); });
+  })(langBtns[lb]);
+}
 (function initLang() {
   var saved = null;
   try { saved = localStorage.getItem(LANG_KEY); } catch (e) {}
@@ -1067,22 +978,23 @@ document.querySelectorAll(".lang-toggle button").forEach(function(btn) {
 })();
 
 /* =========================================================
-   7. CONFIG REMOTA (opcional)
+   7. CONFIG REMOTA (payment-config.json)
    ========================================================= */
 function fetchRemote() {
   if (!REMOTE_CONFIG_URL) return;
   fetch(REMOTE_CONFIG_URL, { cache: "no-store" })
     .then(function(r) { if (!r.ok) throw new Error("bad status"); return r.json(); })
     .then(function(json) {
-      try { localStorage.setItem("nga_remote_config", JSON.stringify(json)); } catch (e) {}
-      CONFIG = deepMerge(CONFIG, json);
+      try { localStorage.setItem(REMOTE_CACHE_KEY, JSON.stringify(json)); } catch (e) {}
+      CONFIG = applyOverrides(CONFIG, json);
       renderAll();
+      if (isAdminRoute() && adminLogged) renderAdminPanel();
     })
     .catch(function() {});
 }
 
 /* =========================================================
-   8. PANEL DE ADMINISTRACIÓN
+   8. PANEL DE ADMINISTRACIÓN (#/admin)
    ========================================================= */
 var adminView = document.getElementById("admin-view");
 var adminLoginBox = document.getElementById("admin-login");
@@ -1090,14 +1002,16 @@ var adminPanelBox = document.getElementById("admin-panel");
 var adminLogged = false;
 try { adminLogged = sessionStorage.getItem(SESSION_KEY) === "1"; } catch (e) {}
 
-function isAdminRoute() {
-  return window.location.hash === "#/admin";
-}
+function isAdminRoute() { return window.location.hash === "#/admin"; }
+
 function toggleAdminRoute() {
   var admin = isAdminRoute();
   adminView.classList.toggle("open", admin);
-  document.querySelector(".site-header").style.display = admin ? "none" : "";
-  document.querySelector(".cohort-bar").style.display = admin ? "none" : "";
+  var sels = ["main", ".site-header", ".cohort-bar", ".site-footer", ".mobile-cta"];
+  for (var i = 0; i < sels.length; i++) {
+    var el = document.querySelector(sels[i]);
+    if (el) el.style.display = admin ? "none" : "";
+  }
   if (admin) {
     window.scrollTo(0, 0);
     adminLoginBox.style.display = adminLogged ? "none" : "block";
@@ -1111,19 +1025,23 @@ document.getElementById("admin-login-btn").addEventListener("click", function() 
   var input = document.getElementById("admin-pass");
   var msg = document.getElementById("admin-login-msg");
   msg.className = "admin-msg";
-  hashPass(input.value).then(function(h) {
-    if (h === (getStoredPass() || defaultPassHash())) {
+  checkPass(input.value).then(function(ok) {
+    if (ok) {
       adminLogged = true;
       try { sessionStorage.setItem(SESSION_KEY, "1"); } catch (e) {}
       adminLoginBox.style.display = "none";
       adminPanelBox.hidden = false;
       msg.textContent = "";
+      input.value = "";
       renderAdminPanel();
     } else {
       msg.className = "admin-msg err";
       msg.textContent = "Contraseña incorrecta.";
     }
   });
+});
+document.getElementById("admin-pass").addEventListener("keydown", function(e) {
+  if (e.key === "Enter") document.getElementById("admin-login-btn").click();
 });
 
 document.getElementById("admin-logout").addEventListener("click", function() {
@@ -1134,48 +1052,60 @@ document.getElementById("admin-logout").addEventListener("click", function() {
   window.location.hash = "";
 });
 
+function setAdminMsg(text, ok) {
+  var msg = document.getElementById("admin-msg");
+  msg.className = "admin-msg " + (ok ? "ok" : "err");
+  msg.textContent = text;
+}
+
 function renderAdminPanel() {
   document.getElementById("admin-autorotate").checked = !!CONFIG.settings.autoRotate;
   var cont = document.getElementById("admin-courses");
   cont.innerHTML = "";
-  CONFIG.courses.forEach(function(c) {
+  CONFIG.courses.forEach(function(c, ci) {
     var block = document.createElement("div");
     block.className = "gw-row";
-    var head = document.createElement("div");
-    head.className = "row-head";
-    head.innerHTML = "<strong>" + esc(c.name.en) + " · USD " + Number(c.price).toLocaleString("en-US") + "</strong>";
-    block.appendChild(head);
-    c.gateways.forEach(function(g) {
+    block.setAttribute("data-ci", ci);
+    block.innerHTML = '<div class="row-head"><strong>' + esc(c.name.en) + " · USD " + money(c.price) + "</strong></div>";
+
+    (c.gateways || []).forEach(function(g, gi) {
+      var cap = g.cap || CONFIG.settings.defaultCap || 1000;
+      var pct = ((g.accumulated || 0) / cap) * 100;
       var gw = document.createElement("div");
-      gw.className = "gw-row";
-      var pct = ((g.accumulated || 0) / (g.cap || CONFIG.settings.defaultCap || 1000)) * 100;
-      var hot = pct >= 85;
+      gw.className = "gw-row gw-item";
+      gw.setAttribute("data-gi", gi);
       gw.innerHTML =
-        '<div class="row-head"><strong>' + esc(g.name) + ' <small style="color:var(--text-mute);font-weight:400;">(' + esc(g.processor || "") + ")</small></strong>" +
-        '<label style="display:flex;gap:6px;align-items:center;"><input type="checkbox" class="gw-enabled" style="width:auto;"> Habilitada</label></div>' +
-        '<div class="grid3">' +
-        '<div><label>Link de pago</label><input type="text" class="gw-link" value="' + esc(g.link) + '"></div>' +
+        '<div class="row-head"><strong>' + esc(g.name) + "</strong>" +
+        '<label style="display:flex;gap:6px;align-items:center;margin:0;"><input type="checkbox" class="gw-enabled" style="width:auto;"> Habilitada</label></div>' +
+        '<div class="grid2">' +
+          '<div><label>Nombre visible</label><input type="text" class="gw-name" value="' + esc(g.name || "") + '"></div>' +
+          '<div><label>Procesador</label><input type="text" class="gw-proc" value="' + esc(g.processor || "") + '"></div>' +
         "</div>" +
+        '<div><label>Link de pago</label><input type="text" class="gw-link" value="' + esc(g.link || "") + '"></div>' +
         '<div class="grid3">' +
-        '<div><label>Acumulado USD</label><input type="number" class="gw-acc" min="0" step="1" value="' + Number(g.accumulated || 0) + '"></div>' +
-        '<div><label>Tope USD</label><input type="number" class="gw-cap" min="1" step="1" value="' + Number(g.cap || CONFIG.settings.defaultCap || 1000) + '"></div>' +
-        '<div><label>Prioridad (1 = primero)</label><input type="number" class="gw-prio" min="1" step="1" value="' + Number(g.priority || 99) + '"></div>' +
+          '<div><label>Acumulado USD</label><input type="number" class="gw-acc" min="0" step="1" value="' + Number(g.accumulated || 0) + '"></div>' +
+          '<div><label>Tope USD</label><input type="number" class="gw-cap" min="1" step="1" value="' + Number(cap) + '"></div>' +
+          '<div><label>Prioridad (1 = primero)</label><input type="number" class="gw-prio" min="1" step="1" value="' + Number(g.priority || 99) + '"></div>' +
         "</div>" +
-        '<div class="gw-bar"><i class="' + (hot ? "hot" : "") + '" style="width:' + Math.min(100, pct) + '%"></i></div>' +
+        '<div class="gw-bar"><i class="' + (pct >= 85 ? "hot" : "") + '" style="width:' + Math.min(100, pct) + '%"></i></div>' +
         '<button type="button" class="btn btn-ghost btn-small gw-del" style="margin-top:10px;">Eliminar</button>';
       gw.querySelector(".gw-enabled").checked = !!g.enabled;
       gw.querySelector(".gw-del").addEventListener("click", function() {
-        c.gateways.splice(c.gateways.indexOf(g), 1);
+        collectAdminState();
+        c.gateways.splice(gi, 1);
         renderAdminPanel();
       });
       block.appendChild(gw);
     });
+
     var addBtn = document.createElement("button");
     addBtn.type = "button";
     addBtn.className = "btn btn-ghost btn-small";
     addBtn.textContent = "+ Agregar pasarela a " + c.name.en;
     addBtn.addEventListener("click", function() {
-      c.gateways.push({ id: "gw_" + Date.now(), processor: "Nueva pasarela", name: "Pasarela", link: "https://REEMPLAZAR_LINK", accumulated: 0, cap: CONFIG.settings.defaultCap || 1000, enabled: true, priority: c.gateways.length + 1 });
+      collectAdminState();
+      c.gateways = c.gateways || [];
+      c.gateways.push({ id: "gw_" + Date.now(), processor: "Nueva pasarela", name: "Pasarela", link: "", accumulated: 0, cap: CONFIG.settings.defaultCap || 1000, enabled: false, priority: c.gateways.length + 1 });
       renderAdminPanel();
     });
     block.appendChild(addBtn);
@@ -1185,28 +1115,21 @@ function renderAdminPanel() {
 
 function collectAdminState() {
   CONFIG.settings.autoRotate = document.getElementById("admin-autorotate").checked;
-  var courseBlocks = document.querySelectorAll("#admin-courses > .gw-row");
-  courseBlocks.forEach(function(cb) {
-    var name = cb.querySelector(".row-head strong").textContent;
-    var course = null;
-    for (var i = 0; i < CONFIG.courses.length; i++) {
-      if (CONFIG.courses[i].name.en === name) { course = CONFIG.courses[i]; break; }
-    }
+  var blocks = document.querySelectorAll("#admin-courses > .gw-row");
+  Array.prototype.forEach.call(blocks, function(cb) {
+    var course = CONFIG.courses[parseInt(cb.getAttribute("data-ci"), 10)];
     if (!course) return;
-    var rows = cb.querySelectorAll(":scope > .gw-row");
-    course.gateways = Array.prototype.map.call(rows, function(r) {
-      var old = null;
-      for (var j = 0; j < CONFIG.courses.length; j++) { /* placeholder no-op */ }
-      return {
-        id: "gw_" + Date.now(),
-        processor: r.querySelector(".row-head small") ? r.querySelector(".row-head small").textContent.replace(/[()]/g, "") : "Pasarela",
-        name: r.querySelector(".row-head strong").childNodes[0].textContent.trim(),
-        link: r.querySelector(".gw-link").value.trim(),
-        accumulated: parseFloat(r.querySelector(".gw-acc").value) || 0,
-        cap: parseFloat(r.querySelector(".gw-cap").value) || 1000,
-        enabled: r.querySelector(".gw-enabled").checked,
-        priority: parseInt(r.querySelector(".gw-prio").value, 10) || 99
-      };
+    var items = cb.querySelectorAll(".gw-item");
+    Array.prototype.forEach.call(items, function(r) {
+      var g = course.gateways[parseInt(r.getAttribute("data-gi"), 10)];
+      if (!g) return;
+      g.name = r.querySelector(".gw-name").value.trim() || "Pasarela";
+      g.processor = r.querySelector(".gw-proc").value.trim();
+      g.link = r.querySelector(".gw-link").value.trim();
+      g.accumulated = parseFloat(r.querySelector(".gw-acc").value) || 0;
+      g.cap = parseFloat(r.querySelector(".gw-cap").value) || CONFIG.settings.defaultCap || 1000;
+      g.enabled = r.querySelector(".gw-enabled").checked;
+      g.priority = parseInt(r.querySelector(".gw-prio").value, 10) || 99;
     });
   });
 }
@@ -1216,21 +1139,17 @@ document.getElementById("admin-save").addEventListener("click", function() {
   saveConfig(CONFIG);
   renderAll();
   renderAdminPanel();
-  var msg = document.getElementById("admin-msg");
-  msg.className = "admin-msg ok";
-  msg.textContent = "Configuración guardada localmente. Exporta el JSON si quieres hostearla de forma remota.";
+  setAdminMsg("Guardado en este navegador. Para publicarlo a todos, usa Exportar JSON y pégalo en payment-config.json.", true);
 });
 
 document.getElementById("admin-export").addEventListener("click", function() {
   collectAdminState();
   var box = document.getElementById("admin-export-box");
-  box.value = JSON.stringify(CONFIG, null, 2);
+  box.value = JSON.stringify(buildOverrides(CONFIG, true), null, 2);
   box.hidden = false;
   box.select();
   try { document.execCommand("copy"); } catch (e) {}
-  var msg = document.getElementById("admin-msg");
-  msg.className = "admin-msg ok";
-  msg.textContent = "JSON copiado al portapapeles. Súbelo como payment-config.json en tu hosting y define REMOTE_CONFIG_URL en el archivo.";
+  setAdminMsg("JSON copiado. Pégalo completo en payment-config.json (GitHub → lápiz → Ctrl+A → pegar → Commit).", true);
 });
 
 document.getElementById("admin-import-btn").addEventListener("click", function() {
@@ -1243,31 +1162,25 @@ document.getElementById("admin-import-file").addEventListener("change", function
   reader.onload = function() {
     try {
       var json = JSON.parse(reader.result);
-      CONFIG = deepMerge(EMBEDDED_CONFIG, json);
+      CONFIG = applyOverrides(clone(EMBEDDED_CONFIG), json);
       saveConfig(CONFIG);
       renderAll();
       renderAdminPanel();
-      var msg = document.getElementById("admin-msg");
-      msg.className = "admin-msg ok";
-      msg.textContent = "JSON importado correctamente.";
+      setAdminMsg("JSON importado correctamente.", true);
     } catch (e) {
-      var msg = document.getElementById("admin-msg");
-      msg.className = "admin-msg err";
-      msg.textContent = "Error al leer el JSON: " + e.message;
+      setAdminMsg("Error al leer el JSON: " + e.message, false);
     }
   };
   reader.readAsText(file);
 });
 
 document.getElementById("admin-reset").addEventListener("click", function() {
-  if (!confirm("¿Restablecer a la config embebida del archivo? Se perderán los cambios locales.")) return;
-  try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
-  CONFIG = clone(EMBEDDED_CONFIG);
+  if (!confirm("¿Borrar los cambios guardados en este navegador y volver a la config del archivo?")) return;
+  try { localStorage.removeItem(STORAGE_KEY); localStorage.removeItem(REMOTE_CACHE_KEY); } catch (e) {}
+  CONFIG = getConfig();
   renderAll();
   renderAdminPanel();
-  var msg = document.getElementById("admin-msg");
-  msg.className = "admin-msg ok";
-  msg.textContent = "Config embebida restablecida.";
+  setAdminMsg("Cambios locales borrados.", true);
 });
 
 document.getElementById("admin-pass-btn").addEventListener("click", function() {
@@ -1276,7 +1189,7 @@ document.getElementById("admin-pass-btn").addEventListener("click", function() {
   if (nuevo.length < 8) { alert("Mínimo 8 caracteres."); return; }
   hashPass(nuevo).then(function(h) {
     try { localStorage.setItem(PASS_KEY, h); } catch (e) {}
-    alert("Contraseña actualizada. Guárdala en tu gestor de contraseñas.");
+    alert("Contraseña actualizada en este navegador. Guárdala en tu gestor de contraseñas.");
   });
 });
 
