@@ -1,39 +1,22 @@
 {
-  "version": 1,
+  "version": 2,
   "settings": {
     "autoRotate": true,
     "defaultCap": 1000,
     "cohort": {
-      "en": "Next live cohort: <strong>November 17</strong> · <strong>14</strong> seats left",
-      "es": "Próxima cohorte en vivo: <strong>17 de noviembre</strong> · quedan <strong>14</strong> cupos"
+      "en": "Next live cohort: <strong>November 17</strong>",
+      "es": "Próxima cohorte en vivo: <strong>17 de noviembre</strong>"
     }
   },
   "courses": [
     {
       "id": "automation",
-      "name": { "en": "AI Business Automation", "es": "Automatización de Negocios con IA" },
-      "tagline": {
-        "en": "Automate support, leads, and operations with AI agents — no code required.",
-        "es": "Automatiza soporte, leads y operaciones con agentes de IA — sin necesidad de código."
-      },
-      "audience": { "en": "For business owners and operators", "es": "Para dueños de negocio y operaciones" },
-      "price": 347,
-      "wasPrice": 447,
-      "popular": true,
-      "badge": { "en": "Most popular", "es": "El más popular" },
-      "features": [
-        { "en": "6 live modules + recordings", "es": "6 módulos en vivo + grabaciones" },
-        { "en": "No-code agent building toolkit", "es": "Kit de construcción de agentes sin código" },
-        { "en": "Templates for support, leads & research", "es": "Plantillas para soporte, leads e investigación" },
-        { "en": "Weekly live Q&A sessions", "es": "Sesiones semanales de preguntas en vivo" },
-        { "en": "Private student community", "es": "Comunidad privada de estudiantes" }
-      ],
       "gateways": [
         {
           "id": "wompi-auto",
           "processor": "Wompi (Bancolombia)",
           "name": "Wompi",
-          "link": "https://checkout.wompi.co/p/REEMPLAZAR_LINK_AUTOMATION_1",
+          "link": "",
           "accumulated": 0,
           "cap": 1000,
           "enabled": true,
@@ -43,7 +26,7 @@
           "id": "epayco-auto",
           "processor": "ePayco",
           "name": "ePayco",
-          "link": "https://checkout.epayco.co/REEMPLAZAR_LINK_AUTOMATION_2",
+          "link": "",
           "accumulated": 0,
           "cap": 1000,
           "enabled": false,
@@ -53,29 +36,12 @@
     },
     {
       "id": "builder",
-      "name": { "en": "AI Agent Builder", "es": "Constructor de Agentes de IA" },
-      "tagline": {
-        "en": "Go from zero to shipping your own autonomous AI agents connected to your tools.",
-        "es": "Ve de cero a desplegar tus propios agentes autónomos conectados a tus herramientas."
-      },
-      "audience": { "en": "For builders, marketers & operators", "es": "Para constructores, marketing y operaciones" },
-      "price": 497,
-      "wasPrice": 647,
-      "popular": false,
-      "badge": { "en": "Flagship", "es": "Programa insignia" },
-      "features": [
-        { "en": "6 live modules + recordings", "es": "6 módulos en vivo + grabaciones" },
-        { "en": "Build 3 agents in production", "es": "Construye 3 agentes en producción" },
-        { "en": "APIs, CRMs, spreadsheets & payment gateways", "es": "APIs, CRMs, hojas de cálculo y pasarelas de pago" },
-        { "en": "Portfolio review by the teaching team", "es": "Revisión de portafolio por el equipo docente" },
-        { "en": "Certificate of completion", "es": "Certificado de finalización" }
-      ],
       "gateways": [
         {
           "id": "wompi-builder",
           "processor": "Wompi (Bancolombia)",
           "name": "Wompi",
-          "link": "https://checkout.wompi.co/p/REEMPLAZAR_LINK_BUILDER_1",
+          "link": "",
           "accumulated": 0,
           "cap": 1000,
           "enabled": true,
@@ -85,7 +51,7 @@
           "id": "epayco-builder",
           "processor": "ePayco",
           "name": "ePayco",
-          "link": "https://checkout.epayco.co/REEMPLAZAR_LINK_BUILDER_2",
+          "link": "",
           "accumulated": 0,
           "cap": 1000,
           "enabled": false,
@@ -95,29 +61,12 @@
     },
     {
       "id": "agency",
-      "name": { "en": "AI Agency Launch", "es": "Lanzamiento de Agencia de IA" },
-      "tagline": {
-        "en": "Launch and sell AI automation services to local businesses and online brands.",
-        "es": "Lanza y vende servicios de automatización con IA a negocios locales y marcas online."
-      },
-      "audience": { "en": "For freelancers & aspiring agency owners", "es": "Para freelancers y futuros dueños de agencia" },
-      "price": 697,
-      "wasPrice": 897,
-      "popular": false,
-      "badge": { "en": "Premium", "es": "Premium" },
-      "features": [
-        { "en": "Everything in Agent Builder", "es": "Todo lo del programa Constructor" },
-        { "en": "Pricing & sales playbook for AI services", "es": "Playbook de precios y ventas de servicios de IA" },
-        { "en": "Client pipeline templates", "es": "Plantillas de pipeline de clientes" },
-        { "en": "1:1 strategy session", "es": "Sesión de estrategia 1:1" },
-        { "en": "Agency community access", "es": "Acceso a la comunidad de agencias" }
-      ],
       "gateways": [
         {
           "id": "wompi-agency",
           "processor": "Wompi (Bancolombia)",
           "name": "Wompi",
-          "link": "https://checkout.wompi.co/p/REEMPLAZAR_LINK_AGENCY_1",
+          "link": "",
           "accumulated": 0,
           "cap": 1000,
           "enabled": true,
@@ -127,96 +76,13 @@
           "id": "epayco-agency",
           "processor": "ePayco",
           "name": "ePayco",
-          "link": "https://checkout.epayco.co/REEMPLAZAR_LINK_AGENCY_2",
+          "link": "",
           "accumulated": 0,
           "cap": 1000,
           "enabled": false,
           "priority": 2
         }
       ]
-    }
-  ],
-  "testimonials": [
-    {
-      "text": {
-        "en": "I finished the program with an agent that filters and answers my support emails every day.",
-        "es": "Salí del programa con un agente que hoy filtra y responde mis correos de soporte."
-      },
-      "cite": { "en": "Student, pilot cohort", "es": "Estudiante, cohorte piloto" }
-    },
-    {
-      "text": {
-        "en": "I finally understood the difference between 'using' AI and building something that runs on its own.",
-        "es": "Por fin entendí la diferencia entre 'usar' IA y construir algo que funciona solo."
-      },
-      "cite": { "en": "Student, pilot cohort", "es": "Estudiante, cohorte piloto" }
-    },
-    {
-      "text": {
-        "en": "The automation module saved me real hours every week in my business.",
-        "es": "El módulo de automatización me ahorró horas reales cada semana en mi negocio."
-      },
-      "cite": { "en": "Student, pilot cohort", "es": "Estudiante, cohorte piloto" }
-    }
-  ],
-  "bonuses": [
-    {
-      "title": { "en": "Prompt & flow library", "es": "Librería de prompts y flujos base" },
-      "body": {
-        "en": "Startup templates for the most requested agents: support, lead scoring, and research.",
-        "es": "Plantillas de arranque para los agentes más pedidos: soporte, calificación de leads e investigación."
-      }
-    },
-    {
-      "title": { "en": "1:1 review session", "es": "Sesión de revisión 1:1" },
-      "body": {
-        "en": "30 minutes with the teaching team to review your portfolio agent before publishing.",
-        "es": "30 minutos con el equipo docente para revisar el agente de tu portafolio antes de publicarlo."
-      }
-    },
-    {
-      "title": { "en": "Private community", "es": "Comunidad privada" },
-      "body": {
-        "en": "Permanent access to the student group to solve doubts and share agents in production.",
-        "es": "Acceso permanente al grupo de estudiantes para resolver dudas y compartir agentes en producción."
-      }
-    }
-  ],
-  "faq": [
-    {
-      "q": { "en": "Do I need to know how to code?", "es": "¿Necesito saber programar?" },
-      "a": {
-        "en": "Not for AI Business Automation. For AI Agent Builder we include a progressive technical track from zero — curiosity with digital tools helps.",
-        "es": "No para Automatización de Negocios. Para Constructor de Agentes incluimos una base técnica progresiva desde cero; ayuda tener curiosidad por herramientas digitales."
-      }
-    },
-    {
-      "q": { "en": "What currency do I pay in?", "es": "¿En qué moneda pago?" },
-      "a": {
-        "en": "Prices are shown and processed in USD by card, no matter where you are.",
-        "es": "Los precios se muestran y procesan en USD con tarjeta, sin importar dónde estés."
-      }
-    },
-    {
-      "q": { "en": "Do I get lifetime access?", "es": "¿Tengo acceso de por vida?" },
-      "a": {
-        "en": "Yes, including future updates to the recorded content.",
-        "es": "Sí, incluyendo actualizaciones futuras del contenido grabado."
-      }
-    },
-    {
-      "q": { "en": "How much time per week?", "es": "¿Cuánto tiempo debo dedicar por semana?" },
-      "a": {
-        "en": "4–6 hours: one 90-minute live session plus a hands-on build challenge.",
-        "es": "Entre 4 y 6 horas: una sesión en vivo de 90 minutos más el reto práctico de construcción."
-      }
-    },
-    {
-      "q": { "en": "Which program should I pick?", "es": "¿Qué programa debo elegir?" },
-      "a": {
-        "en": "Run a business? → AI Business Automation. Want to build from scratch? → AI Agent Builder. Want to sell automation services? → AI Agency Launch. Not sure? Write to us and we'll help you choose.",
-        "es": "¿Diriges un negocio? → Automatización de Negocios. ¿Quieres construir desde cero? → Constructor de Agentes. ¿Quieres vender servicios de automatización? → Lanzamiento de Agencia. ¿No estás seguro? Escríbenos y te ayudamos a elegir."
-      }
     }
   ]
 }
